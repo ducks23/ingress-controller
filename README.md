@@ -2,22 +2,16 @@
 
 This repo is to help deploy an ingress controller to your EKS cluster in AWS 
 
-![Alt text](./ingress_controller.png "Title")
-
- 
+![Alt text](.imgs/ingress_controller.png "Title")
 
 
-aws cli
-eksctl
-kubernetes
-helm
+Dependencies
 
+- aws-cli
+- eksctl
+- kubernetes
+- helm
 
-
-# Requirements
-
-For this project I ran all these commands on a ubuntu 22.04 server and I have the m1 macbook so make sure you install the packages that align with your hardware. You will also need an
-AWS Access Key and Secret to configure with the aws-cli.
 
 
 # Install kubectl and helm
@@ -28,7 +22,7 @@ sudo snap install kubectl --classic
 ```
 
 # Install eksctl on your architecture
-## for ARM systems, set ARCH to: `arm64`, `armv6` or `armv7`
+for ARM systems, set ARCH to: `arm64`, `armv6` or `armv7`
 ```
 ARCH=arm64
 PLATFORM=$(uname -s)_$ARCH
@@ -43,7 +37,7 @@ sudo mv /tmp/eksctl /usr/local/bin
 
 ```
 
-# install aws cli
+# Install aws-cli
 
 ```
 curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip"
@@ -66,13 +60,15 @@ eksctl create cluster demo
 
 # Add Ingress Controller to Cluster
 
+```
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-helm search repo ingress-nginx --versions
 
-helm install ingress-nginx ingress-nginx/ingress-nginx 
+kubectl create namespace nginx-ingress 
+
+helm install ingress-nginx ingress-nginx/ingress-nginx -n nginx-ingress
 
 kubectl get svc
-
+```
 
 
 # Deploy Pods
@@ -89,8 +85,8 @@ kubectl apply -f ingress.yaml
 
 Now these two services are reachable is reachable at:
 
-https://load-balancer.com/foo
-https://load-balancer.com/bar
+- "https://load-balancer.com/foo"
+- "https://load-balancer.com/bar"
 
 
 
