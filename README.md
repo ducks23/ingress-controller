@@ -1,8 +1,23 @@
+# Summary
+
+This repo is to help deploy an ingress controller to your EKS cluster in AWS 
+
+![Alt text](ingress-controller.png?raw=true "Title")
+
+ 
+
+
+aws cli
+eksctl
+kubernetes
+helm
+
+
+
 # Requirements
 
 For this project I ran all these commands on a ubuntu 22.04 server and I have the m1 macbook so make sure you install the packages that align with your hardware. You will also need an
 AWS Access Key and Secret to configure with the aws-cli.
-
 
 
 # Install kubectl and helm
@@ -22,7 +37,7 @@ curl -sLO "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_
 
 curl -sL "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_checksums.txt" | grep $PLATFORM | sha256sum --check
 
-tar -xzf eksctl_$PLATFORM.tar.gz -C /tmp && rm eksctl_$PLATFORM.tar.gz
+tar -xzf eksctl_$PLATFORM.tar.gz -C /tmp && rm eksctl_$PLATFORM.tar.gz 
 
 sudo mv /tmp/eksctl /usr/local/bin
 
@@ -58,6 +73,8 @@ helm install ingress-nginx ingress-nginx/ingress-nginx
 
 kubectl get svc
 
+
+
 # Deploy Pods
 
 kubectl apply -f deployment-foo.yaml
@@ -68,3 +85,13 @@ kubectl apply -f deployment-bar.yaml
 
 kubectl apply -f ingress.yaml
 # ingress-controller
+
+
+Now these two services are reachable is reachable at:
+
+https://load-balancer.com/foo
+https://load-balancer.com/bar
+
+
+
+
