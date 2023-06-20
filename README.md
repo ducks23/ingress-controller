@@ -73,15 +73,15 @@ kubectl get svc
 
 # Deploy Pods
 
-kubectl apply -f deployment-foo.yaml
-kubectl apply -f deployment-bar.yaml
-
+```
+kubectl apply -f ./deployments/deployment-foo.yaml
+kubectl apply -f ./deployments/deployment-bar.yaml
+```
 
 # Deploy Ingress service to route traffic to pods
-
-kubectl apply -f ingress.yaml
-# ingress-controller
-
+'''
+kubectl apply -f ./deployments/ingress.yaml
+'''
 
 Now these two services are reachable is reachable at:
 
@@ -89,5 +89,9 @@ Now these two services are reachable is reachable at:
 - "https://load-balancer.com/bar"
 
 
+# Clean Up Cluster
 
+```
+eksctl delte cluster demo
+```
 
