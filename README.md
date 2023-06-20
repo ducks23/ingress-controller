@@ -92,6 +92,6 @@ Now these two services are reachable is reachable at:
 # Clean Up Cluster
 
 ```
-eksctl delte cluster demo
+eksctl delete cluster demo
 ```
 
