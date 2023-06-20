@@ -2,7 +2,7 @@
 
 This repo is to help deploy an ingress controller to your EKS cluster in AWS 
 
-![Alt text](.imgs/ingress_controller.png "Title")
+![Alt text](./imgs/ingress_controller.png "Title")
 
 
 Dependencies
