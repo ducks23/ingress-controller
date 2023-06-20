@@ -79,14 +79,14 @@ kubectl apply -f ./deployments/deployment-bar.yaml
 ```
 
 # Deploy Ingress service to route traffic to pods
-'''
+```
 kubectl apply -f ./deployments/ingress.yaml
-'''
+```
 
 Now these two services are reachable is reachable at:
 
-- "https://load-balancer.com/foo"
-- "https://load-balancer.com/bar"
+- https://load-balancer.com/foo
+- https://load-balancer.com/bar
 
 
 # Clean Up Cluster
