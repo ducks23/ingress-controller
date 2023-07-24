@@ -2,9 +2,10 @@
 
 This repo is to help deploy an ingress controller to your EKS cluster in AWS and setting up routing by path.
 
-ie services will be able to be reached at by going to:
+For example services will be able to be reached at by going to:
 
 https://hostname/foo
+
 https://hostname/bar
 
 
