@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: INGRESS.CONTROLLER.ADDRESS
+  - host:  a1eb38b2f404442779cb492ec2bdc902-1677527282.us-west-2.elb.amazonaws.com 
     http:
       paths:
       - path: /foo
@@ -28,7 +28,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: INGRESS.CONTROLLER.ADDRESS
+  - host:  a1eb38b2f404442779cb492ec2bdc902-1677527282.us-west-2.elb.amazonaws.com 
     http:
       paths:
       - path: /bar
